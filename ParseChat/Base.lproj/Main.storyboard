@@ -51,7 +51,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ECH-Up-Mo3"/>
-                                    <segue destination="ZIA-7E-SRc" kind="modal" identifier="chatModal" id="sLF-X1-uxz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VL-fJ-CRJ">
@@ -90,6 +89,7 @@
                     <connections>
                         <outlet property="loginField" destination="Qsw-jz-uIc" id="E94-mK-8dS"/>
                         <outlet property="passwordField" destination="5uu-Mc-QPa" id="oQB-Vp-s85"/>
+                        <segue destination="taM-F6-uNU" kind="modal" identifier="chatModal" id="JbD-Yf-1pr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="es4-ou-RaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="407"/>
+            <point key="canvasLocation" x="2218" y="407"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tuH-mk-BS6">
@@ -217,23 +217,23 @@
             <point key="canvasLocation" x="237" y="407"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="RLD-NW-pQA">
+        <scene sceneID="BaK-Wh-UQr">
             <objects>
-                <navigationController storyboardIdentifier="chatNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ZIA-7E-SRc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="chatNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="taM-F6-uNU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZtC-GS-ZXM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vMm-9Y-uGB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MU8-TZ-Dvn" kind="relationship" relationship="rootViewController" id="c0g-gW-MvU"/>
+                        <segue destination="MU8-TZ-Dvn" kind="relationship" relationship="rootViewController" id="hhj-EB-OYc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V79-8x-DPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F2Q-DH-9kX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="407"/>
+            <point key="canvasLocation" x="1686" y="407"/>
         </scene>
     </scenes>
 </document>
