@@ -37,9 +37,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func onSend(sender: UIButton) {
-        
+        let user = PFUser.currentUser()
         var message = PFObject(className: "Message")
         message["text"] = messageField.text
+        message["user"] = user
         message.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
@@ -50,6 +51,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print("Message save failed with error: \(error)")
             }
         }
+        messageField.text = ""
+        loadMessage()
         
         
     }
@@ -66,7 +69,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MessageCell", forIndexPath: indexPath) as! MessageCell
         let cellMessage = messages![indexPath.row]
-        cell.messageLabel.text = cellMessage["text"] as! String
+        cell.messageLabel.text = cellMessage["text"] as? String
+        if let user = cellMessage["user"] as? PFUser{
+            cell.usernameLabel.text = user["username"] as? String
+        } else {
+            cell.usernameLabel.text = "anonymous"
+        }
         print(indexPath.row)
         
         return cell
@@ -74,9 +82,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func onTimer() {
         // Add code to be run periodically
-        var query = PFQuery(className:"Message")
+        loadMessage()
+    }
+    
+    func loadMessage() {
+        let query = PFQuery(className:"Message")
         query.orderByDescending("createdAt")
         query.whereKeyExists("text")
+        query.includeKey("user")
         query.findObjectsInBackgroundWithBlock {
             (messages: [PFObject]?, error: NSError?) -> Void in
             
@@ -86,7 +99,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 // Do something with the found objects
                 self.messages = messages
                 self.tableView.reloadData()
-
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")

@@ -126,20 +126,27 @@
                                     <action selector="onSend:" destination="MU8-TZ-Dvn" eventType="touchUpInside" id="fT2-p8-1cO"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rrY-aU-tgH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rrY-aU-tgH">
                                 <rect key="frame" x="0.0" y="110" width="320" height="458"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="56" id="tNB-hr-USd" customClass="MessageCell" customModule="ParseChat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="56"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="118" id="tNB-hr-USd" customClass="MessageCell" customModule="ParseChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNB-hr-USd" id="Hwq-eT-1lE">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="117.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSs-XI-nQE">
-                                                    <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                                    <rect key="frame" x="8" y="36.5" width="304" height="20.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVm-Ik-YSl">
+                                                    <rect key="frame" x="8" y="8" width="79" height="20.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -148,15 +155,18 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstItem="NVm-Ik-YSl" firstAttribute="leading" secondItem="Hwq-eT-1lE" secondAttribute="leading" constant="8" id="BEG-7o-DXk"/>
+                                                <constraint firstItem="ZSs-XI-nQE" firstAttribute="top" secondItem="NVm-Ik-YSl" secondAttribute="bottom" constant="8" id="JYF-Hu-gqD"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZSs-XI-nQE" secondAttribute="trailing" constant="8" id="Mjb-lS-Uy4"/>
+                                                <constraint firstItem="NVm-Ik-YSl" firstAttribute="top" secondItem="Hwq-eT-1lE" secondAttribute="top" constant="8" id="OPR-BM-rg3"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZSs-XI-nQE" secondAttribute="bottom" constant="8" id="UdS-gW-J4S"/>
-                                                <constraint firstItem="ZSs-XI-nQE" firstAttribute="top" secondItem="Hwq-eT-1lE" secondAttribute="top" constant="8" id="XRb-p3-WTG"/>
                                                 <constraint firstItem="ZSs-XI-nQE" firstAttribute="leading" secondItem="Hwq-eT-1lE" secondAttribute="leading" constant="8" id="h1p-TN-OfN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
                                             <outlet property="messageLabel" destination="ZSs-XI-nQE" id="Veh-oh-adX"/>
+                                            <outlet property="usernameLabel" destination="NVm-Ik-YSl" id="na1-58-fUy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
