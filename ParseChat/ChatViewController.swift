@@ -24,6 +24,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         
+        loadMessage()
+        
         //reload message from Parse
         NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "onTimer", userInfo: nil, repeats: true)
 
@@ -38,7 +40,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func onSend(sender: UIButton) {
         let user = PFUser.currentUser()
-        var message = PFObject(className: "Message")
+        let message = PFObject(className: "Message")
         message["text"] = messageField.text
         message["user"] = user
         message.saveInBackgroundWithBlock {

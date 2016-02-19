@@ -139,17 +139,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSs-XI-nQE">
-                                                    <rect key="frame" x="8" y="36.5" width="304" height="20.5"/>
+                                                    <rect key="frame" x="8" y="34" width="304" height="18"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVm-Ik-YSl">
-                                                    <rect key="frame" x="8" y="8" width="79" height="20.5"/>
+                                                    <rect key="frame" x="8" y="8" width="70.5" height="18"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.33413776178010468" green="0.33413776178010468" blue="0.33413776178010468" alpha="0.75" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -161,6 +161,7 @@
                                                 <constraint firstItem="NVm-Ik-YSl" firstAttribute="top" secondItem="Hwq-eT-1lE" secondAttribute="top" constant="8" id="OPR-BM-rg3"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZSs-XI-nQE" secondAttribute="bottom" constant="8" id="UdS-gW-J4S"/>
                                                 <constraint firstItem="ZSs-XI-nQE" firstAttribute="leading" secondItem="Hwq-eT-1lE" secondAttribute="leading" constant="8" id="h1p-TN-OfN"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NVm-Ik-YSl" secondAttribute="trailing" constant="8" id="zG1-Xa-FWJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
